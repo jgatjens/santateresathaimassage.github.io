@@ -32,6 +32,6 @@ const Footer = styled.div`
 export default () => (
   <Footer>
     <div className="line"></div>
-    <a href="mailto:jgatjens@gmail.com">Hire me</a>
+    <a href="mailto:jgatjens@gmail.com">Contact Me</a>
   </Footer>
 )

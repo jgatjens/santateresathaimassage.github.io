@@ -1,44 +1,19 @@
 import React from "react";
 import path from "path";
-import axios from "axios";
+// import axios from "axios";
 
-const strapi_url = "http://localhost:1337";
+// const strapi_url = "http://localhost:1337";
 
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
 export default {
   productionSourceMaps: true,
   entry: path.join(__dirname, "src", "index.tsx"),
   getRoutes: async () => {
-    const { data: home_en } = await axios.get(`${strapi_url}/homepage`);
-    const { data: home_es } = await axios.get(
-      `${strapi_url}/homepage?_locale=es`
-    );
-
-    const { data: resume_en } = await axios.get(`${strapi_url}/resume`);
-    const { data: resume_es } = await axios.get(
-      `${strapi_url}/resume?_locale=es`
-    );
-
+   
     return [
       {
         path: "/",
         template: "src/pages/index.tsx",
-        getData: () => ({ data: home_en }),
-      },
-      {
-        path: "/es",
-        template: "src/pages/index.tsx",
-        getData: () => ({ data: home_es }),
-      },
-      {
-        path: "/resume",
-        template: "src/pages/resume.tsx",
-        getData: () => ({ data: resume_en }),
-      },
-      {
-        path: "/es/resume",
-        template: "src/pages/resume.tsx",
-        getData: () => ({ data: resume_es }),
       },
     ];
   },

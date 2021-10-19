@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import picture from "../assets/jgatjens.jpg";
+import picture from "../assets/gigi.jpg";
 import { IProfile } from "../../types";
 
 interface ProfileProps {
@@ -13,7 +13,9 @@ const Logo = styled.img`
   display: block;
   width: 142px;
   height: 142px;
+  border-radius: 30px;
 `;
+
 const Title = styled.h1`
   margin: 20px 0 0 0;
   color: #020218;
